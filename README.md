@@ -1,6 +1,6 @@
 # toptorrents-api
 
-*An open source API service which always returns the top 100 movies torrents
+*An open source API service which always returns the top 100 movie torrents
 from the web.*
 
 ## Purpose
