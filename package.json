@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rdegges/toptorrents-api/issues"
   },
-  "homepage": "https://github.com/rdegges/toptorrents-api#readme"
+  "homepage": "https://github.com/rdegges/toptorrents-api#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
