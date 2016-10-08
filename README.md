@@ -25,6 +25,15 @@ This project is production-ready, and can be deployed live to [Heroku][] in a
 single click.
 
 
+## Deploy this Project
+
+To deploy this project live to [Heroku][] *right now*, just click the button
+below!  It won't cost you any money, and it makes the entire installation
+process a single click!!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
   [Hack Reactor]: http://www.hackreactor.com/ "Hack Reactor"
   [ThePirateBay]: https://thepiratebay.org/ "The Pirate Bay"
   [Heroku]: https://www.heroku.com/ "Heroku"
