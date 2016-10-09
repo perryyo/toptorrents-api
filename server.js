@@ -11,6 +11,12 @@ const PORT = process.env.PORT || settings.DEFAULT_PORT;
 let TORRENT_DATA;
 let app = express();
 
+// If we're running in production on Heroku, we should trust that the proxy is
+// securing the incoming request.
+if (!settings.DEBUG) {
+  app.enable("trust proxy");
+}
+
 /**
  * Return a list of available torrent categories.
  */
