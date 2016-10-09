@@ -1,24 +1,32 @@
 "use strict";
 
+const async = require("async");
 const express = require("express");
 
 const settings = require("./settings");
 const tasks = require("./tasks");
 
-let DEFAULT_PORT = 3000;
-let TORRENT_DATA;
+const PORT = process.env.PORT || settings.DEFAULT_PORT;
 
+let TORRENT_DATA;
 let app = express();
 
 /**
  * Return a list of available torrent categories.
  */
 app.get("/", (req, res) => {
+  let endpoints = [];
+
   if (!TORRENT_DATA) {
     return res.status(503).json({ error: "Currently rebuilding the torrent index. Please try again in a moment!" });
   }
 
-  res.json({ categories: Object.keys(TORRENT_DATA) });
+  async.each(Object.keys(TORRENT_DATA), (item, element) => {
+    let url = req.protocol + "://" + req.hostname + (PORT === 80 || PORT === 443 ? "" : ":" + PORT) + "/" + item;
+    endpoints.push(url);
+  });
+
+  res.json({ endpoints });
 });
 
 /**
@@ -77,4 +85,4 @@ setInterval(() => {
   });
 }, settings.INDEX_UPDATE_INTERVAL);
 
-app.listen(process.env.PORT || DEFAULT_PORT);
+app.listen(PORT);

@@ -1,8 +1,7 @@
 "use strict";
 
-
-
 module.exports = {
+  DEFAULT_PORT: 3000,
   INDEX_UPDATE_INTERVAL: 1000 * 60 * 60,
   ADMIN_EMAIL: "r@rdegges.com",
   TPB_URL: "https://thepiratebay.org/top",
