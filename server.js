@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   }
 
   async.each(Object.keys(TORRENT_DATA), (item, element) => {
-    let url = req.protocol + "://" + req.hostname + (settings.DEBUG ? PORT : "") + "/" + item;
+    let url = req.protocol + "://" + req.hostname + (settings.DEBUG ? ":" + PORT : "") + "/" + item;
     endpoints.push(url);
   });
 
