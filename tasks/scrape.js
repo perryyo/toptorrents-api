@@ -61,13 +61,13 @@ function scrapeTop100(categoryNumber, callback) {
     torrents = [];
 
     $("table#searchResult tr").not(":first-child").each(function() {
-      let torrentName = $(this).find(".detName a").text();
-      let torrentSize = $(this).find(".detDesc").text().split(",")[1].split(" ")[2];
-      let torrentUrl = $(this).find("td ").not(":first-child").find("a").not(":first-child").attr("href");
-      let torrentSeeds = $(this).find("td[align=\"right\"]").first().text();
-      let torrentLeeches = $(this).find("td[align=\"right\"]").last().text();
+      let name = $(this).find(".detName a").text();
+      let size = $(this).find(".detDesc").text().split(",")[1].split(" ")[2];
+      let url = $(this).find("td ").not(":first-child").find("a").not(":first-child").attr("href");
+      let seeds = $(this).find("td[align=\"right\"]").first().text();
+      let leeches = $(this).find("td[align=\"right\"]").last().text();
 
-      torrents.push({ torrentName, torrentSize, torrentUrl, torrentSeeds, torrentLeeches });
+      torrents.push({ name, size, url, seeds, leeches });
     });
 
     return callback(null, torrents);
