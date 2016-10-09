@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   }
 
   async.each(Object.keys(TORRENT_DATA), (item, element) => {
-    let url = req.protocol + "://" + req.hostname + (PORT === 80 || PORT === 443 ? "" : ":" + PORT) + "/" + item;
+    let url = req.protocol + "://" + req.hostname + (settings.DEBUG ? PORT : "") + "/" + item;
     endpoints.push(url);
   });
 
