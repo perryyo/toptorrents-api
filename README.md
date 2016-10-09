@@ -34,6 +34,31 @@ process a single click!!
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 
+## Running this Project
+
+To run this project locally, here's what you need to do (after forking this
+project):
+
+```console
+$ git clone <your-forked-url>
+$ cd toptorrents-api
+$ npm install
+$ heroku apps:create
+$ heroku config:pull
+$ echo DEBUG=true >> .env
+$ heroku local
+```
+
+Now, open up `http://localhost:5000` in your browser to view the application and
+mess around!
+
+If you want to view the live application on Heroku, you can do so by running:
+
+```console
+$ heroku apps:open
+```
+
+
   [Hack Reactor]: http://www.hackreactor.com/ "Hack Reactor"
   [ThePirateBay]: https://thepiratebay.org/ "The Pirate Bay"
   [Heroku]: https://www.heroku.com/ "Heroku"
