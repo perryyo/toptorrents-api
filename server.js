@@ -92,3 +92,4 @@ setInterval(() => {
 }, settings.INDEX_UPDATE_INTERVAL);
 
 app.listen(PORT);
+console.log("Running server on PORT:", PORT);
