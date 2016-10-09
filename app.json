@@ -7,6 +7,9 @@
     "api",
     "service"
   ],
+  "addons": [
+    "stormpath"
+  ],
   "repository": "https://github.com/rdegges/toptorrents-api",
   "success_url": "/"
 }
