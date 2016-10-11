@@ -21,7 +21,7 @@ if (!settings.DEBUG) {
  * Return a list of available torrent categories.
  */
 app.get("/", (req, res) => {
-  let endpoints = [];
+  let categories = [];
 
   if (!TORRENT_DATA) {
     return res.status(503).json({ error: "Currently rebuilding the torrent index. Please try again in a moment!" });
@@ -29,10 +29,10 @@ app.get("/", (req, res) => {
 
   async.each(Object.keys(TORRENT_DATA), (item, element) => {
     let url = req.protocol + "://" + req.hostname + (settings.DEBUG ? ":" + PORT : "") + "/" + item;
-    endpoints.push(url);
+    categories.push(url);
   });
 
-  res.json({ endpoints });
+  res.json({ categories });
 });
 
 /**
