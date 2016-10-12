@@ -4,7 +4,7 @@ const async = require("async");
 const cheerio = require("cheerio");
 const request = require("request");
 
-const settings = require("../settings");
+const settings = require("./settings");
 
 /**
  * Scrape thepiratebay.org for the top 100 of everything, and return an object
@@ -74,4 +74,4 @@ function scrapeTop100(categoryNumber, callback) {
   });
 }
 
-module.exports = scrape;
+module.exports = { scrape };
