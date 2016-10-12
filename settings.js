@@ -1,10 +1,19 @@
 "use strict";
 
 module.exports = {
+  // Enable debugging mode (useful for local development).
   DEBUG: process.env.DEBUG,
+
+  // This is the port we'll run the local web server on.
   DEFAULT_PORT: 3000,
+
+  // Amount of time (in ms) between torrent data updates.
   INDEX_UPDATE_INTERVAL: 1000 * 60 * 60,
+
+  // The admin email of the person who runs this site. Used in error messages.
   ADMIN_EMAIL: "r@rdegges.com",
+
+  // thepiratebay.org scraping data.
   TPB_URL: "https://thepiratebay.org/top",
   TPB_CATEGORIES: {
     audio: {
